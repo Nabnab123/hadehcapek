@@ -127,7 +127,8 @@
                   </div>
                   <div class="form-group">
                      <label>Kode Barcode Barang</label>
-                     <select name="kode_barcode" class="form-control js-example-basic-single" autofocus="" onchange="hitung()">
+                     <select name="kode_barcode" id="searchdd1" class="form-control" autofocus="" onchange="hitung()">
+                     <option hidden>Pilih Barang</option>
                      <?php 
                      $kodebrg = $koneksi->query("select * from tb_barang order by nama_barang");
                      while ($d_barang = $kodebrg->fetch_assoc()) {
@@ -348,8 +349,11 @@
    </script>
 
 
-   <script type="text/javascript">
-      $(document).ready(function() {
-      $('.js-example-basic-single').select2();
-   });
-   </script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.jquery.min.js" integrity="sha512-rMGGF4wg1R73ehtnxXBt5mbUfN9JUJwbk21KMlnLZDJh7BkPmeovBuddZCENJddHYYMkCh9hPFnPmS9sspki8g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.min.css" integrity="sha512-yVvxUQV0QESBt1SyZbNJMAwyKvFTLMyXSyBHDO4BG5t7k/Lw34tyqlSDlKIrIENIzCl+RVUNjmCPG+V/GMesRw==" crossorigin="anonymous" referrerpolicy="no-referrer" rel="stylesheet" />
+
+<script>
+   $("#searchdd1").chosen();
+   
+</script>
